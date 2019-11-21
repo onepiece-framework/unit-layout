@@ -1,6 +1,6 @@
 <?php
 /**
- * unit-layout:/index.php
+ * unit-layout:/Layout.class.php
  *
  * @creation  2017-05-09
  * @updation  2019-02-23 Separate from NewWorld.
@@ -22,14 +22,14 @@ namespace OP\UNIT;
 use OP\OP_CORE;
 use OP\OP_UNIT;
 use OP\IF_UNIT;
-use OP\Env;
-use Exception;
+use OP\UNIT_LAYOUT;
 
 /** Layout
  *
- * @creation  2017-02-14
+ * @created   2017-02-14
+ * @updated   2019-11-21  Separate to UNIT_LAYOUT trait.
  * @version   1.0
- * @package   unit-newworld
+ * @package   unit-layout
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
@@ -38,40 +38,5 @@ class Layout implements IF_UNIT
 	/** trait.
 	 *
 	 */
-	use OP_CORE, OP_UNIT;
-
-	/** Automatically.
-	 *
-	 * @param	 string 	$content
-	 * @throws	 Exception
-	 */
-	function Auto(&$content)
-	{
-		//	...
-		$config = Env::Get('layout');
-
-		//	...
-		if(!$config['execute'] ){
-			echo $content;
-			return;
-		};
-
-		//	...
-		if(!file_exists( $path = ConvertPath($config['directory']) ) ){
-			throw new Exception("Layout directory has not been exists. ($path)");
-		};
-
-		//	...
-		if(!file_exists( $path = $path.$config['name'] ) ){
-			throw new Exception("Layout directory has not been exists. ($path)");
-		};
-
-		//	...
-		if(!file_exists( $path = $path.'/index.php' ) ){
-			throw new Exception("Layout controller has not been exists. ($path)");
-		};
-
-		//	...
-		$this->Unit('App')->Template($path, ['content'=>$content]);
-	}
+	use OP_CORE, OP_UNIT, UNIT_LAYOUT;
 }
