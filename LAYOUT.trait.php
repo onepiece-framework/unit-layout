@@ -41,7 +41,7 @@ trait UNIT_LAYOUT
 	 */
 	private $_content;
 
-	/** Automatically.
+	/** Automatically layout.
 	 *
 	 * @param	 string 	$content
 	 * @throws	 Exception
@@ -52,7 +52,7 @@ trait UNIT_LAYOUT
 		$config = Env::Get('layout');
 
 		//	...
-		if(!$config['execute'] ){
+		if( empty($config['execute']) ){
 			echo $this->_content;
 			return;
 		}
@@ -64,7 +64,7 @@ trait UNIT_LAYOUT
 
 		//	...
 		if(!file_exists( $path = $path.$config['name'] ) ){
-			throw new Exception("Layout directory has not been exists. ($path)");
+			throw new Exception("Layout has not been exists. ($path)");
 		}
 
 		//	...
@@ -73,6 +73,55 @@ trait UNIT_LAYOUT
 		};
 
 		//	...
-		echo $this->__DO_TEMPLATE($path, ['content'=>$this->_content]);
+		echo $this->__TEMPLATE($path);
+	}
+
+	/** Set/Get layout config.
+	 *
+	 * <pre>
+	 * Boolean : Layout execute flag.
+	 * String  : Layout name.
+	 * </pre>
+	 *
+	 * @created  2019-10-11
+	 * @param    boolean|string  $value
+	 */
+	static function __LAYOUT_CONFIG($value=null)
+	{
+		//	Get
+		if( $value === null ){
+			//	...
+			$config = Env::Get('layout');
+
+			//	...
+			if( $config['execute'] ){
+				//	...
+				$name = $config['name'];
+				$path = ConvertPath($config['directory']).$name;
+
+				//	...
+				RootPath('layout', $path);
+			}
+
+			//	...
+			return empty($config['execute']) ? false: ($config['name'] ?? null);
+		}
+
+		//	Set
+		switch( $type = gettype($value) ){
+			case 'boolean':
+				$key = 'execute';
+				break;
+
+			case 'string':
+				$key = 'name';
+				break;
+
+			default:
+				throw new \Exception("Has not been support this type. ($type)");
+		}
+
+		//	...
+		Env::Set('layout', [$key=>$value]);
 	}
 }
