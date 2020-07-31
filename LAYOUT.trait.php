@@ -94,7 +94,7 @@ trait UNIT_LAYOUT
 			$config = Env::Get('layout');
 
 			//	...
-			if( $config['execute'] ){
+			if( $config['execute'] ?? null ){
 				//	...
 				$name = $config['name'];
 				$path = ConvertPath($config['directory']).$name;
