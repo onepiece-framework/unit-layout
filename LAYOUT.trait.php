@@ -58,7 +58,10 @@ trait UNIT_LAYOUT
 		}
 
 		//	...
-		if(!file_exists( $path = ConvertPath($config['directory']) ) ){
+		$path = RootPath('asset') . 'layout/';
+
+		//	...
+		if(!file_exists( $path ) ){
 			throw new Exception("Layout directory has not been exists. ($path)");
 		};
 
@@ -97,7 +100,9 @@ trait UNIT_LAYOUT
 			if( $config['execute'] ?? null ){
 				//	...
 				$name = $config['name'];
-				$path = ConvertPath($config['directory']).$name;
+
+				//	...
+				$path = RootPath('asset') . "layout/{$name}/";
 
 				//	...
 				RootPath('layout', $path);
