@@ -1,11 +1,10 @@
 <?php
-/**
- * unit-layout:/Layout.class.php
+/** op-unit-layout:/Layout.class.php
  *
  * @creation  2017-05-09
  * @updation  2019-02-23 Separate from NewWorld.
  * @version   1.0
- * @package   unit-layout
+ * @package   op-unit-layout
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
@@ -29,7 +28,7 @@ use OP\UNIT_LAYOUT;
  * @created   2017-02-14
  * @updated   2019-11-21  Separate to UNIT_LAYOUT trait.
  * @version   1.0
- * @package   unit-layout
+ * @package   op-unit-layout
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
