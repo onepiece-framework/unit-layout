@@ -1,12 +1,11 @@
 <?php
-/**
- * unit-layout:/LAYOUT.trait.php
+/** op-unit-layout:/LAYOUT.trait.php
  *
  * @created   2017-05-09
  * @updated   2019-02-23  Separate from NewWorld.
  * @updated   2019-11-21  Change to trait from class.
  * @version   1.0
- * @package   unit-layout
+ * @package   op-unit-layout
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
@@ -29,7 +28,7 @@ use function OP\ConvertPath;
  * @created   2017-02-14
  * @updated   2019-11-21  Change to trait from class.
  * @version   1.0
- * @package   unit-layout
+ * @package   op-unit-layout
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
