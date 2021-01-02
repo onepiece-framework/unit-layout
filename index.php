@@ -1,10 +1,9 @@
 <?php
-/**
- * unit-layout:/index.php
+/** op-unit-layout:/index.php
  *
  * @creation  2019-02-23
  * @version   1.0
- * @package   unit-layout
+ * @package   op-unit-layout
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
