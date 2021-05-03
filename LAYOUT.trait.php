@@ -69,7 +69,7 @@ trait UNIT_LAYOUT
 		};
 
 		//	...
-		echo $this->__TEMPLATE($path);
+		Template(CompressPath($path));
 	}
 
 	/** Set/Get layout config.
