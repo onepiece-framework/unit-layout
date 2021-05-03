@@ -34,12 +34,6 @@ use function OP\ConvertPath;
  */
 trait UNIT_LAYOUT
 {
-	/**
-	 *
-	 * @var string
-	 */
-	private $_content;
-
 	/** Automatically layout.
 	 *
 	 * @param	 string 	$content
@@ -52,7 +46,7 @@ trait UNIT_LAYOUT
 
 		//	...
 		if( empty($config['execute']) ){
-			echo $this->_content;
+			Content();
 			return;
 		}
 
