@@ -37,5 +37,7 @@ class Layout implements IF_UNIT
 	/** trait.
 	 *
 	 */
-	use OP_CORE, OP_UNIT, UNIT_LAYOUT;
+	use OP_CORE, OP_UNIT, UNIT_LAYOUT {
+		UNIT_LAYOUT::__LAYOUT as Auto;
+	}
 }
