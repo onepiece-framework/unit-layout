@@ -39,7 +39,7 @@ trait UNIT_LAYOUT
 	 * @param	 string 	$content
 	 * @throws	 Exception
 	 */
-	function __LAYOUT()
+	static function __LAYOUT()
 	{
 		//	...
 		$config = Env::Get('layout');
