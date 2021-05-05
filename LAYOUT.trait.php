@@ -42,7 +42,7 @@ trait UNIT_LAYOUT
 	static function __LAYOUT()
 	{
 		//	...
-		$config = Env::Get('layout');
+		$config = Config::Get('layout');
 
 		//	...
 		if( empty($config['execute']) ){
