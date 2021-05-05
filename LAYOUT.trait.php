@@ -51,6 +51,12 @@ trait UNIT_LAYOUT
 		}
 
 		//	...
+		if( 'text/html' !== Env::Mime() ){
+			Content();
+			return;
+		}
+
+		//	...
 		$path = RootPath('asset') . 'layout/';
 
 		//	...
